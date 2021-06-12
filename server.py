@@ -10,7 +10,6 @@ from werkzeug.security import generate_password_hash, check_password_hash
 from __init__ import app, db
 from models import User
 
-
 PEOPLE_FOLDER = os.path.join('static','styles')
 # app = Flask(__name__)
 
