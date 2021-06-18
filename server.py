@@ -1,5 +1,6 @@
 from flask import Flask, flash, request, redirect, url_for, render_template, send_file, flash
 import os
+import sys
 from flask_sqlalchemy import SQLAlchemy
 from flask_login import UserMixin
 from flask_login import LoginManager, login_user, login_required, current_user, logout_user
@@ -33,6 +34,8 @@ def load_user(user_id):
 
 @app.route("/")
 def index():
+    if(sys.argv[1] == '--admin'):
+        print("Opening Niffler in Admin mode !!")
     return render_template('index.html')
 
 @app.route('/profile')
